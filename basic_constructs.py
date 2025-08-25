@@ -1,7 +1,17 @@
 """
 Python is 
 * Dynamically typed: 
-  * Frowned upon in large enterprise apps which use JVM or DotNet platforms with strong typing.   
+  * Frowned upon in large enterprise apps which use JVM or DotNet platforms with strong typing.
+  * Same variable can be assigned different types. x= 5 and x = 'hello'  is acceptable. It has risks in production code. Difficult to keep track of types manually.
+  * Hard to reason on input and output types in a method. 
+  * Also there are higher chances of passing invalid object type to methods which will not be detected until we actuall run.
+  * To get over this there are @dataclasses, type hinting and external libaries like pydantic(offers IDE type hints, Data validations, JSON Serialization)
+    * Type hints are ignored by python interpreter. 
+      * Use native type hints including collections with generic for concrete type hints. 
+      * Use collections.abc when abstract types like iterable are sufficing. Other use case of custom classes implementing common Class (using typing.Protocol again static type checking only)
+    * They are meant to improve readability about intention of author when using calling methods.
+    * They also can integrate with IDE to help with syntax highlighting when use is not right. It can still doesnt stop folks from passing different type than intended.
+    * Pydantic: Actually validating type and actual value at runtime at beginning of method may be warranted for fail fast with proper reasoning. 
 * Interpreted: 
   * Implies slower than pure compiled language like C++ and Bytecode+JIT Compiled JVM Platform.  
 * Less verbose 

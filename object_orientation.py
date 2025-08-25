@@ -11,7 +11,7 @@ Note on immutability: There is no explicit java like final construct. One can ac
 Python supports multiple inheritance. 
 Python doesn't have notion of abstract classes, methods.
 Python doesn't have notion of interfaces.
-
+* One can introduce ide support for hinting on missing implementation of methods of a parent class, by having parent class inherit typing.Protocol
 
 """
 
